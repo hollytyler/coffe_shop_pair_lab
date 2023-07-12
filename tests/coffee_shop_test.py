@@ -28,5 +28,7 @@ class TestCoffeeShop(unittest.TestCase):
 
     def test_sell_drink(self):
         self.coffee_shop.sell_drink(self.mocha, self.customer)
+        self.assertEqual(103,self.coffee_shop.till)
+        self.assertEqual(7, self.customer.wallet)
 
 # @unittest.skip("delete this line to run the test")
