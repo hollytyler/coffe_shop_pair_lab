@@ -1,6 +1,7 @@
 import unittest
 from src.coffee_shop import CoffeeShop
 from src.drink import Drink
+from src.customer import Customer
 
 class TestCoffeeShop(unittest.TestCase):
     
@@ -8,6 +9,7 @@ class TestCoffeeShop(unittest.TestCase):
         self.mocha = Drink("Mocha", 3)
         self.latte = Drink("Latte", 4)
         self.drinks = [self.mocha, self.latte]
+        self.customer = Customer("Holly", 10)
         self.coffee_shop = CoffeeShop("The Prancing Pony", 100, self.drinks)
     
     def test_coffee_shop_has_name(self):
@@ -25,5 +27,6 @@ class TestCoffeeShop(unittest.TestCase):
         self.assertEqual(90, self.coffee_shop.till)
 
     def test_sell_drink(self):
-        
+        self.coffee_shop.sell_drink(self.mocha, self.customer)
+
 # @unittest.skip("delete this line to run the test")
